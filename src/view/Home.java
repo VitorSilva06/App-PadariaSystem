@@ -16,13 +16,16 @@ public class Home extends Application {
         Sidebar menu = new Sidebar();
 
         //Carregamdo imagem
-        Image imgIconStarbucks = new Image(getClass().getResourceAsStream("/view/img/starbucks-48px.png"));
+        Image imgIconStarbucks = new Image(getClass().getResourceAsStream("/view/resources/img/starbucks-48px.png"));
 
         BorderPane layoutPrincipal = new BorderPane();
+        layoutPrincipal.setStyle("-fx-background-image: url('/view/resources/img/imgFundo.jpg')");
         layoutPrincipal.setLeft(menu);
-        layoutPrincipal.setStyle("-fx-background-image: url('/view/img/imgFundo.jpg')");
 
-        Scene scene = new Scene(layoutPrincipal,800, 600);
+        menu.setStyle("-fx-background-color: white; -fx-padding: 30px");
+
+
+        Scene scene = new Scene(layoutPrincipal,1024, 700);
         janela.setScene(scene);
         janela.setTitle("Starbucks");
         janela.getIcons().add(imgIconStarbucks);
