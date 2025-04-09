@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
@@ -16,6 +17,7 @@ public class Sidebar extends VBox {
     public Button btnCliente = new Button("Cliente");
     public Button btnPedido = new Button("Pedido");
 
+
     //construtor para inicializar o componentes (como um objeto) em outras janelas
     public Sidebar() {
 
@@ -24,6 +26,7 @@ public class Sidebar extends VBox {
         Image imgIconProduto = new Image(getClass().getResourceAsStream("/view/resources/img/icon-produto.png"));
         Image imgIconCliente = new Image(getClass().getResourceAsStream("/view/resources/img/icon-cliente.png"));
         Image imgIconPedido = new Image(getClass().getResourceAsStream("/view/resources/img/icon-pedido.png"));
+
 
         Image imgIconStarbucks = new Image(getClass().getResourceAsStream("/view/resources/img/starbucks-48px.png"));
 
@@ -58,6 +61,11 @@ public class Sidebar extends VBox {
         imgViewIconPedido.setFitWidth(25);
         btnPedido.setGraphic(imgViewIconPedido);
 
+
+
+
+
+
         //Estilo personalizado para o botão
         String styleButton  = "-fx-background-color: transparent;" +
                 "-fx-border-color: transparent;" +
@@ -66,13 +74,14 @@ public class Sidebar extends VBox {
                 "-fx-text-fill: #58b558;" +
                 "-fx-alignment: center;" +
                 "-fx-graphic-text-gap: 20px;" +
-                "-fx-font-family:" + fontNegrito.getFamily() +";"+
+                "-fx-font-family:" + fontNegrito.getFamily() +";" +
                 "-fx-cursor: hand;"; //Muda o cursosr do mouse para a mãozinha
 
         btnCliente.setStyle(styleButton);
         btnProduto.setStyle(styleButton);
         btnPedido.setStyle(styleButton);
         btnFornecedor.setStyle(styleButton);
+
 
         Label lblMenu = new Label("Starbucks");
         lblMenu.setFont(Font.font(fontNegrito.getFamily(), 28));
@@ -96,6 +105,8 @@ public class Sidebar extends VBox {
         btnProduto.setOnMouseEntered(evento -> btnProduto.setStyle(styleButton.replace("transparent",
                 "#ccc;")));
             btnProduto.setOnMouseExited(evento -> btnProduto.setStyle(styleButton));
+
+
         // "->" Arrow Fuction é chamada quando uma ação está em andamento.
 
 
